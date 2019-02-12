@@ -24,7 +24,7 @@
       <button @click="addVideo">Add another video</button> <br />
       <br />
       Videos<br />
-      <span v-for="video in videos">
+      <span v-for="(video, index) in videos">
         <iframe
           :src="video.url"
           width="300"
@@ -34,7 +34,7 @@
         ><br />
         {{video.title}} <button @click="video.show=false">Hide</button>
         <button @click="video.show=true">Show</button> <br />
-        <button @click="deleteVideo(video)"> Delete </button> <br/>
+        <button @click="deleteVideo(index)"> Delete </button> <br/>
       </span>
       <! -- Exercise: 
          Only show the hide button when the video is shown.

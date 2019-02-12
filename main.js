@@ -29,18 +29,9 @@ var app = new Vue({
       };
       this.videos.push(obj);
     },
-    deleteVideo:function(video){
+    deleteVideo:function(index){
       console.log("delete video");
-      let result = [];
-      var flag = false;
-      for (let each_video of this.videos){
-        if(video.url !== each_video.url){
-          result.push(each_video);
-        }
-        
-      }
-      this.videos = result;
-
+      this.videos.splice(index,index+1);
     }
   }
 });
